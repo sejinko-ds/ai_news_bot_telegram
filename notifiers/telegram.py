@@ -27,7 +27,7 @@ class TelegramNotifier:
                     chat_id=chat_id,
                     text=msg,
                     parse_mode=self.parse_mode,
-                    disable_web_page_preview=True,
+                    disable_web_page_preview=False,
                 )
                 sent += 1
             except Exception as e:
