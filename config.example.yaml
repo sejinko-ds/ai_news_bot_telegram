@@ -1,0 +1,51 @@
+bot:
+  token: "${TELEGRAM_BOT_TOKEN}"
+  parse_mode: "HTML"
+
+sites:
+  - name: "GeekNews (Hada)"
+    key: "hada"
+    type: "rss"
+    url: "https://news.hada.io/rss/news"
+    enabled: true
+    max_articles: 10
+
+  - name: "AI Times"
+    key: "aitimes"
+    type: "rss"
+    url: "https://www.aitimes.com/rss/allArticle.xml"
+    enabled: true
+    max_articles: 10
+
+  - name: "Yozm Wishket AI"
+    key: "yozm"
+    type: "rss"
+    url: "https://yozm.wishket.com/magazine/ai/feed/"
+    enabled: true
+    max_articles: 10
+
+recipients:
+  - chat_id: 123456789
+    name: "your_name"
+    enabled: true
+
+schedules:
+  - name: "morning"
+    cron: "0 8 * * *"
+    timezone: "Asia/Seoul"
+    sites: ["all"]
+    recipients: ["all"]
+
+  - name: "evening"
+    cron: "0 18 * * 1-5"
+    timezone: "Asia/Seoul"
+    sites: ["hada"]
+    recipients: ["all"]
+
+storage:
+  db_path: "news_bot.db"
+  retention_days: 90
+
+logging:
+  level: "INFO"
+  file: "news_bot.log"
