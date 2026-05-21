@@ -10,7 +10,7 @@ venv/
 .venv/
 *.log
 .omc/
-config.yaml
+# config.yaml is tracked for GitHub Actions
 *.egg-info/
 dist/
 build/
