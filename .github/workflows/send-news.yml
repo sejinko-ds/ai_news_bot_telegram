@@ -1,11 +1,9 @@
 name: Send News to Telegram
 
 on:
-  schedule:
-    # 매일 오전 8시 KST (= 23:00 UTC 전날)
-    - cron: "0 23 * * *"
-    # 평일 오후 6시 KST (= 09:00 UTC)
-    - cron: "0 9 * * 1-5"
+  # schedule:
+  #   # 매시간 실행 (KST 기준 매시 정각)
+  #   - cron: "0 * * * *"
   workflow_dispatch:
 
 jobs:
